@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meghana | Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #e8f5e9; }
+        .navbar { background: #2e7d32; }
+        .navbar-brand, .nav-link { color: #fff !important; }
+        .hero { 
+            background: linear-gradient(to right, #43a047, #1b5e20);
+            color: white; 
+            padding: 120px 0; 
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; font-weight: 700; }
+        .card { transition: transform 0.3s ease-in-out; border: none; }
+        .card:hover { transform: scale(1.05); }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .skill-badge {
+            background: linear-gradient(135deg, #388e3c, #1b5e20);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.1);
+        }
+        .project-card {
+            background: #a5d6a7;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            padding: 20px;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: #1b5e20;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Meghana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Hi, I'm Meghana</h1>
+            <p>Full-Stack Developer | ML Enthusiast</p>
+            <a href="#projects" class="btn btn-light mt-3">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="container my-5 text-center">
+        <h2>About Me</h2>
+        <p>Seeking a challenging role in a dynamic organization where I can utilize my technical skills in software development and problem-solving to contribute effectively while continuously learning and growing.</p>
+    </section>
+
+    <section id="skills" class="container my-5 text-center">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span class="skill-badge">C</span>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">CSS</span>
+            <span class="skill-badge">Bootstrap</span>
+            <span class="skill-badge">Tailwind</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Express</span>
+            <span class="skill-badge">Flask</span>
+            <span class="skill-badge">MySQL</span>
+            <span class="skill-badge">MongoDB</span>
+        </div>
+    </section>
+
+    <section id="projects" class="container my-5 text-center">
+        <h2>Projects</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="project-card">
+                    <h4>Handwritten Digits Recognition</h4>
+                    <p>Implemented an ANN model in PyTorch for digit recognition.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="project-card">
+                    <h4>Risk-Based Proctoring System</h4>
+                    <p>Developed a behavioral-based proctoring system using AI.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="project-card">
+                    <h4>Web-Based PDF Editor</h4>
+                    <p>Created a rich text-based PDF editor using Node.js and pdf.js.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container my-5 text-center">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:meghana@example.com">meghana@example.com</a></p>
+            <p>LinkedIn: <a href="#">linkedin.com/in/meghana</a></p>
+            <p>GitHub: <a href="#">github.com/meghana</a></p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
