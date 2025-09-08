@@ -3,234 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meghana | Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Meghana M | AI-Focused Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background: #e8f5e9; }
-        .navbar { background: #2e7d32; }
-        .navbar-brand, .nav-link { color: #fff !important; }
-        .hero { 
-            background: linear-gradient(to right, #43a047, #1b5e20);
-            color: white; 
-            padding: 120px 0; 
+        /* General */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a23;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10px;
+            background: #0a0a23;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        nav a { color: #e0e0e0; margin: 0 15px; font-weight: 500; }
+        nav a:hover { color: #00ffe7; }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 0 50px;
+            background: #0a0a23;
             text-align: center;
         }
-        .hero h1 { font-size: 3rem; font-weight: 700; }
-        .card { transition: transform 0.3s ease-in-out; border: none; }
-        .card:hover { transform: scale(1.05); }
+        .hero-text {
+            max-width: 700px;
+            animation: fadeIn 1.5s ease-out;
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: #00ffe7;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cfcfcf;
+        }
+        .hero-text .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            color: #0a0a23;
+            background: #00ffe7;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        .hero-text .btn:hover { transform: scale(1.05); }
+
+        /* Sections */
+        section {
+            padding: 100px 50px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #00ffe7;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cfcfcf;
+            text-align: center;
+        }
+
+        /* Skills */
         .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        .skill-domain h4 {
+            color: #00ffe7;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        .skill-badges {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
         }
         .skill-badge {
-            background: linear-gradient(135deg, #388e3c, #1b5e20);
-            color: white;
-            padding: 12px 18px;
+            background: linear-gradient(135deg, #00ffe7, #0077ff);
+            color: #0a0a23;
+            padding: 10px 18px;
             border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            display: inline-block;
-            transition: transform 0.3s ease;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .skill-badge:hover {
             transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 255, 231, 0.6);
+        }
+
+        /* Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
         .project-card {
-            background: #a5d6a7;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            padding: 20px;
+            background: #111138;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 255, 231, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .project-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 255, 231, 0.4);
         }
-        .contact-info {
-            text-align: center;
+        .project-card h4 {
+            color: #00ffe7;
+            margin-bottom: 15px;
+        }
+        .project-card p { color: #cfcfcf; margin-bottom: 15px; }
+        .project-card a {
+            color: #0a0a23;
+            background: #00ffe7;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        .project-card a:hover { transform: scale(1.05); }
+
+        /* Contact */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
             margin-top: 40px;
         }
-        .contact-info a {
-            text-decoration: none;
-            color: #1b5e20;
-            font-size: 1.2rem;
-            font-weight: bold;
-            display: block;
+        .contact-card {
+            background: #111138;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 255, 231, 0.4);
+        }
+        .contact-card i {
+            font-size: 2.5rem;
+            color: #00ffe7;
+            margin-bottom: 15px;
+        }
+        .contact-card a { color: #00ffe7; font-weight: 600; display: block; margin-top: 10px; }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Responsive */
+        @media(max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Meghana</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo"><strong>MEGHANA</strong></div>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
+    <!-- Hero -->
     <section class="hero">
-        <div class="container">
-            <h1>Hi, I'm Meghana</h1>
-            <p>Full-Stack Developer | ML Enthusiast</p>
-            <a href="#projects" class="btn btn-light mt-3">View My Work</a>
+        <div class="hero-text">
+            <h1>Meghana M</h1>
+            <h2>Full-Stack Developer & AI Enthusiast</h2>
+            <p>Innovative developer passionate about web development, machine learning, and creating intelligent, interactive applications.</p>
+            <a href="#projects" class="btn">View My Work</a>
         </div>
     </section>
 
-    <section id="about" class="container my-5 text-center">
-        <h2>About Me</h2>
-        <p>
-            I'm an enthusiastic full-stack developer with a keen interest in Machine Learning and Generative AI. As a fresher with a strong foundation in web development and problem-solving, I love building clean, scalable applications and exploring how intelligent systems can enhance user experiences. From developing interactive web apps to experimenting with models that can learn and generate, I enjoy bridging code with creativity. I'm eager to collaborate, innovate, and grow with teams that are shaping the future of tech.
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+            I'm an enthusiastic full-stack developer and AI-focused innovator. I enjoy building scalable web applications, exploring machine learning models, and designing seamless user experiences. My goal is to create intelligent solutions that merge technology with creativity.
         </p>
     </section>
-    
 
-    <section id="skills" class="container my-5 text-center">
-        <h2>Skills</h2>
-        <div class="skills-container">
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-container">
+        <!-- Programming Languages -->
+        <div class="skill-domain">
+          <h4>Programming Languages</h4>
+          <div class="skill-badges">
             <span class="skill-badge">C</span>
             <span class="skill-badge">C++</span>
             <span class="skill-badge">Python</span>
             <span class="skill-badge">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Web Technologies -->
+        <div class="skill-domain">
+          <h4>Web Technologies</h4>
+          <div class="skill-badges">
+            <strong>Frontend:</strong>
             <span class="skill-badge">React</span>
             <span class="skill-badge">HTML</span>
             <span class="skill-badge">CSS</span>
+            <span class="skill-badge">JS</span>
             <span class="skill-badge">Bootstrap</span>
-            <span class="skill-badge">Tailwind</span>
+            <span class="skill-badge">Tailwind</span><br>
+            <strong>Backend:</strong>
             <span class="skill-badge">Node.js</span>
             <span class="skill-badge">Express</span>
             <span class="skill-badge">Flask</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-domain">
+          <h4>Database</h4>
+          <div class="skill-badges">
             <span class="skill-badge">MySQL</span>
             <span class="skill-badge">MongoDB</span>
+          </div>
+        </div>
+
+        <!-- Machine Learning -->
+        <div class="skill-domain">
+          <h4>Machine Learning</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">Scikit-learn</span>
+            <span class="skill-badge">NumPy</span>
+            <span class="skill-badge">Pandas</span>
+            <span class="skill-badge">OpenCV</span>
+          </div>
+        </div>
+
+        <!-- Big Data -->
+        <div class="skill-domain">
+          <h4>Big Data</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">Spark</span>
+            <span class="skill-badge">Hive</span>
+            <span class="skill-badge">Hadoop</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="skill-domain">
+          <h4>DevOps & Tools</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h4>Fake News Detection Web App</h4>
+                <p>Flask-based ML app predicting real or fake news in real-time.</p>
+                <a href="https://fake-news-detector-7u5j.onrender.com" target="_blank">Live Demo</a>
+            </div>
+            <div class="project-card">
+                <h4>Handwritten Digits Recognition</h4>
+                <p>Implemented an ANN model in PyTorch for digit recognition.</p>
+                <a href="https://github.com/pq36/handwritten_digits_recognition" target="_blank">GitHub</a>
+            </div>
+            <div class="project-card">
+                <h4>Risk-Based Proctoring System</h4>
+                <p>Behavioral-based AI system for online exam monitoring.</p>
+                <a href="https://github.com/pq36/RISK_BASED_PROCTORING_SYSTEM" target="_blank">GitHub</a>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="container my-5 text-center">
-        <h2 class="mb-4">Live Projects</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="project-card p-4">
-                    <h4 class="mb-3">Fake News Detection Web App</h4>
-                    <p class="mb-4">
-                        A machine learning-powered web application developed using Flask and deployed on Render. It analyzes news content in real-time and predicts whether it's real or fake, using natural language processing techniques.
-                    </p>
-                    <div class="d-flex justify-content-center gap-3">
-                        <a href="https://fake-news-detector-7u5j.onrender.com" target="_blank" class="btn btn-outline-dark">
-                            <i class="fas fa-globe me-2"></i>Live Demo
-                        </a>
-                    </div>
-                </div>
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <a href="mailto:meghanaop360@gmail.com">meghanaop360@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/meghana-m-84967a25b" target="_blank">linkedin.com/in/meghana-m-84967a25b</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-github"></i>
+                <h4>GitHub</h4>
+                <a href="https://github.com/pq36" target="_blank">github.com/pq36</a>
             </div>
         </div>
     </section>
-    
-    <section id="projects" class="container my-5 text-center">
-        <h2 class="mb-4">Projects</h2>
-        <div class="row mt-4">
-    
-            <!-- Project 1 -->
-            <div class="col-md-6 mb-4">
-                <div class="project-card">
-                    <h4>Handwritten Digits Recognition</h4>
-                    <p>Implemented an ANN model in PyTorch for digit recognition.</p>
-                    <a href="https://github.com/pq36/handwritten_digits_recognition" target="_blank" class="btn btn-outline-success mt-2">
-                        <i class="fab fa-github me-2"></i>See on GitHub
-                    </a>
-                </div>
-            </div>
-    
-            <!-- Project 2 -->
-            <div class="col-md-6 mb-4">
-                <div class="project-card">
-                    <h4>Risk-Based Proctoring System</h4>
-                    <p>Developed a behavioral-based proctoring system using AI.</p>
-                    <a href="https://github.com/pq36/RISK_BASED_PROCTORING_SYSTEM" target="_blank" class="btn btn-outline-success mt-2">
-                        <i class="fab fa-github me-2"></i>See on GitHub
-                    </a>
-                </div>
-            </div>
-    
-            <!-- Project 3 -->
-            <div class="col-md-6 mb-4">
-                <div class="project-card">
-                    <h4>Music Player Website using Spotify API</h4>
-                    <p>Created a dynamic music player interface using Spotify API to fetch and play songs based on user search and preferences.</p>
-                    <a href="https://github.com/pq36/Music-Player-Website" target="_blank" class="btn btn-outline-success mt-2">
-                        <i class="fab fa-github me-2"></i>See on GitHub
-                    </a>
-                </div>
-            </div>
-    
-        </div>
-    </section>
-    
-
-    <section id="contact" class="container my-5 text-center">
-        <h2 class="mb-4">Get in Touch</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card contact-card border-0 shadow p-3">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope fa-3x text-success mb-3"></i>
-                        <h5>Email</h5>
-                        <p><a href="mailto:meghanaop360@gmail.com" class="contact-link">meghanaop360@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card contact-card border-0 shadow p-3">
-                    <div class="card-body text-center">
-                        <i class="fab fa-linkedin fa-3x text-primary mb-3"></i>
-                        <h5>LinkedIn</h5>
-                        <p><a href="https://linkedin.com/in/meghana-m-84967a25b" class="contact-link" target="_blank">linkedin.com/in/meghana</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card contact-card border-0 shadow p-3">
-                    <div class="card-body text-center">
-                        <i class="fab fa-github fa-3x text-dark mb-3"></i>
-                        <h5>GitHub</h5>
-                        <p><a href="https://github.com/pq36" class="contact-link" target="_blank">github.com/pq36</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <style>
-        .contact-card {
-            background: #ffffff;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-        .contact-link {
-            text-decoration: none;
-            font-weight: bold;
-            color: #2e7d32;
-            transition: color 0.3s ease-in-out;
-        }
-        .contact-link:hover {
-            color: #1b5e20;
-        }
-    </style>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
