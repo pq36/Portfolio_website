@@ -31,6 +31,71 @@
         }
         nav a { color: #e0e0e0; margin: 0 15px; font-weight: 500; }
         nav a:hover { color: #00ffe7; }
+        /* Responsive for screens <= 900px */
+@media(max-width: 900px) {
+    /* Navbar */
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 0px;
+        background: rgba(10,10,35,0.9); /* semi-transparent */
+    }
+    .logo {
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+    .menu {
+        display: none; /* hide links by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: rgba(10,10,35,0.95);
+        padding: 10px 15px;
+        border-radius: 0 0 10px 10px;
+        z-index: 99;
+    }
+    .menu.show { display: flex; }
+    .menu a {
+        padding: 8px 0;
+        font-size: 1rem;
+        text-align: left;
+    }
+    .menu-btn {
+        display: block;
+        font-size: 1.6rem;
+        color: #00ffe7;
+        cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text h2 { font-size: 1.2rem; }
+    .hero-text p { font-size: 1rem; }
+    .hero-text .btn { padding: 10px 20px; font-size: 0.9rem; }
+
+    /* Skills Section */
+    .skills-container { gap: 30px; }
+    .skill-domain h4 { font-size: 1.2rem; }
+    .skill-badges { gap: 8px; }
+
+    /* Projects Section */
+    .projects-container { grid-template-columns: 1fr; gap: 20px; }
+
+    /* Contact Section */
+    .contact-container { flex-direction: column; gap: 20px; }
+    .contact-card { width: 100%; max-width: 300px; margin: 0 auto; }
+
+    /* Sections padding */
+    section { padding: 60px 20px; }
+}
 
         /* Hero Section */
         .hero {
@@ -351,5 +416,17 @@
             </div>
         </div>
     </section>
+    <script>
+    const menuBtn = document.createElement('div');
+    menuBtn.className = 'menu-btn';
+    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    document.querySelector('nav').appendChild(menuBtn);
+
+    const menu = document.querySelector('.menu');
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('show');
+    });
+</script>
+
 </body>
 </html>
