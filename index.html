@@ -1,432 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meghana M | AI-Focused Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* General */
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #0a0a23;
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meghana M | AI-Focused Developer Portfolio</title>
 
-        a { text-decoration: none; }
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 10px;
-            background: #0a0a23;
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-        }
-        nav a { color: #e0e0e0; margin: 0 15px; font-weight: 500; }
-        nav a:hover { color: #00ffe7; }
-        /* Responsive for screens <= 900px */
-@media(max-width: 900px) {
-    /* Navbar */
-    nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px 0px;
-        background: rgba(10,10,35,0.9); /* semi-transparent */
+  <style>
+    :root{
+      --bg:#07071a;
+      --card:#0f1030;
+      --accent:#00ffe7;
+      --accent-2:#ff3b6b;
+      --muted:#bfc1c8;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(0,0,0,0.35);
+      --mono: 'Source Code Pro', monospace;
+      --sans: 'Poppins', sans-serif;
     }
-    .logo {
-        font-size: 1.4rem;
-        white-space: nowrap;
-    }
-    .menu {
-        display: none; /* hide links by default */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        background: rgba(10,10,35,0.95);
-        padding: 10px 15px;
-        border-radius: 0 0 10px 10px;
-        z-index: 99;
-    }
-    .menu.show { display: flex; }
-    .menu a {
-        padding: 8px 0;
-        font-size: 1rem;
-        text-align: left;
-    }
-    .menu-btn {
-        display: block;
-        font-size: 1.6rem;
-        color: #00ffe7;
-        cursor: pointer;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(0,255,231,0.04), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(255,59,107,0.03), transparent),
+                  var(--bg);
+      color:#e8e8ee;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
     }
 
-    /* Hero Section */
-    .hero {
-        flex-direction: column;
-        padding: 40px 20px;
-        text-align: center;
+    /* NAV */
+    nav{
+      position:fixed;
+      inset:0 0 auto 0;
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      padding:14px 28px;
+      align-items:center;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      backdrop-filter: blur(6px);
+      z-index:60;
+      border-bottom:1px solid rgba(255,255,255,0.03);
     }
-    .hero-text h1 { font-size: 2.5rem; }
-    .hero-text h2 { font-size: 1.2rem; }
-    .hero-text p { font-size: 1rem; }
-    .hero-text .btn { padding: 10px 20px; font-size: 0.9rem; }
+    .logo {font-weight:700; letter-spacing:1px}
+    .nav-links{display:flex; gap:18px; align-items:center}
+    .nav-links a{color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px; transition:all .18s}
+    .nav-links a:hover{color:var(--bg); background:var(--accent); box-shadow:0 6px 18px rgba(0,255,231,0.08)}
+    .cta-small{background:var(--accent-2); color:white; padding:8px 12px; border-radius:10px; font-weight:700}
 
-    /* Skills Section */
-    .skills-container { gap: 30px; }
-    .skill-domain h4 { font-size: 1.2rem; }
-    .skill-badges { gap: 8px; }
+    /* HERO */
+    .hero{
+      min-height:78vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:120px 28px 40px;
+      position:relative;
+      text-align:center;
+    }
+    .hero-card{
+      width:100%;
+      max-width:1100px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px;
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:22px;
+      align-items:center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
 
-    /* Projects Section */
-    .projects-container { grid-template-columns: 1fr; gap: 20px; }
+    /* left column text */
+    .hero-left h1{
+      margin:0;
+      font-size:2.6rem;
+      line-height:1.02;
+    }
+    .hero-left h2{
+      margin:8px 0 12px;
+      font-size:1.05rem;
+      color:var(--accent);
+      font-weight:700;
+    }
+    .hero-left p{color:var(--muted); margin:0 0 18px; max-width:54ch}
+    .hero-actions{display:flex; gap:12px; align-items:center; justify-content:flex-start; flex-wrap:wrap}
+    .btn{
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+      cursor:pointer;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      border:none;
+    }
+    .btn-primary{background:var(--accent); color:#071025; box-shadow:0 8px 30px rgba(0,255,231,0.06)}
+    .btn-ghost{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04)}
 
-    /* Contact Section */
-    .contact-container { flex-direction: column; gap: 20px; }
-    .contact-card { width: 100%; max-width: 300px; margin: 0 auto; }
+    /* right column: whoami terminal */
+    .terminal{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      border-radius:12px;
+      padding:18px;
+      font-family:var(--mono);
+      color:#dfeff1;
+      min-height:180px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+    .term-top{display:flex; gap:8px; align-items:center; margin-bottom:12px}
+    .dot{width:11px;height:11px;border-radius:50%;}
+    .red{background:#ff5f56}
+    .yellow{background:#ffbd2e}
+    .green{background:#2ecc71}
+    .term-body{font-size:0.95rem; line-height:1.6; color:#bfeee3}
+    .whoami-line{display:flex; gap:10px; align-items:center}
+    .muted{color:var(--muted); font-weight:600; font-family:var(--sans)}
 
-    /* Sections padding */
-    section { padding: 60px 20px; }
-}
+    /* sections */
+    section {padding:72px 28px}
+    .section-title{font-size:1.9rem; color:#fff; text-align:center; margin-bottom:14px}
+    .subtitle{color:var(--muted); text-align:center; margin-bottom:28px}
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80vh;
-            padding: 0 50px;
-            background: #0a0a23;
-            text-align: center;
-        }
-        .hero-text {
-            max-width: 700px;
-            animation: fadeIn 1.5s ease-out;
-        }
-        .hero-text h1 {
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-        .hero-text h2 {
-            font-size: 1.5rem;
-            color: #00ffe7;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #cfcfcf;
-        }
-        .hero-text .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            color: #0a0a23;
-            background: #00ffe7;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-        }
-        .hero-text .btn:hover { transform: scale(1.05); }
+    /* skills */
+    .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; max-width:1100px; margin:0 auto}
+    .skill-card{
+      background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:16px; border-radius:12px; text-align:center;
+      border:1px solid rgba(255,255,255,0.02);
+      transition:transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s;
+      cursor:pointer;
+    }
+    .skill-card:hover{transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.5)}
+    .skill-card h4{color:var(--accent); margin:6px 0; font-size:1rem}
+    .skill-badges{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
+    .badge{
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:8px 10px; border-radius:999px; font-weight:700; font-size:0.86rem; color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02)
+    }
 
-        /* Sections */
-        section {
-            padding: 100px 50px;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #fff;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: #00ffe7;
-            display: block;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #cfcfcf;
-            text-align: center;
-        }
+    /* projects */
+    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; max-width:1100px; margin:22px auto 0}
+    .project{
+      perspective:1200px;
+      height:220px;
+    }
+    .project-card{
+      position:relative;
+      width:100%;
+      height:100%;
+      border-radius:14px;
+      transform-style:preserve-3d;
+      transition: transform .9s cubic-bezier(.2,.9,.3,1), box-shadow .25s;
+      cursor:pointer;
+    }
+    .project-card-inner{
+      position:absolute; inset:0; border-radius:inherit; overflow:hidden;
+      display:flex; flex-direction:column; justify-content:space-between; padding:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .project-card:hover{transform: translateY(-10px) rotateX(6deg); box-shadow: 0 24px 60px rgba(2,6,23,0.7)}
+    .project-card h4{color:var(--accent); margin:0 0 6px}
+    .project-card p{color:var(--muted); margin:0 0 12px}
+    .project-card a{display:inline-block; padding:8px 14px; border-radius:999px; background:var(--accent); color:#071025; font-weight:800; text-decoration:none}
 
-        /* Skills */
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-        }
-        .skill-domain h4 {
-            color: #00ffe7;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.3rem;
-        }
-        .skill-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-        .skill-badge {
-            background: linear-gradient(135deg, #00ffe7, #0077ff);
-            color: #0a0a23;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .skill-badge:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(0, 255, 231, 0.6);
-        }
+    /* contact */
+    .contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px; max-width:900px; margin:0 auto}
+    .contact-card{
+      padding:18px; border-radius:12px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .contact-card i{font-size:28px;color:var(--accent); margin-bottom:8px; display:block}
+    .contact-card a{color:var(--muted); font-weight:700; display:block; margin-top:6px}
 
-        /* Projects */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .project-card {
-            background: #111138;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 255, 231, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 255, 231, 0.4);
-        }
-        .project-card h4 {
-            color: #00ffe7;
-            margin-bottom: 15px;
-        }
-        .project-card p { color: #cfcfcf; margin-bottom: 15px; }
-        .project-card a {
-            color: #0a0a23;
-            background: #00ffe7;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-        }
-        .project-card a:hover { transform: scale(1.05); }
+    /* red/blue pill block */
+    .pill-block{max-width:900px; margin:26px auto 0; text-align:center; padding:22px; border-radius:14px; background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.02)}
+    .pill-quote{font-style:italic; color:#dcdcdc; margin-bottom:16px; font-size:1.05rem}
+    .pills{display:flex; gap:14px; justify-content:center; align-items:center; margin-top:8px}
+    .pill{padding:10px 18px; border-radius:999px; font-weight:800; cursor:pointer; display:inline-flex; gap:10px; align-items:center; border:none}
+    .pill.blue{background:#2b6cff; color:white; box-shadow:0 12px 40px rgba(43,108,255,0.08)}
+    .pill.red{background:linear-gradient(90deg,var(--accent-2),#ff765a); color:white; box-shadow:0 18px 50px rgba(255,59,107,0.12)}
+    .pill.small{padding:8px 12px; font-weight:700}
 
-        /* Contact */
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .contact-card {
-            background: #111138;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            width: 250px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 255, 231, 0.4);
-        }
-        .contact-card i {
-            font-size: 2.5rem;
-            color: #00ffe7;
-            margin-bottom: 15px;
-        }
-        .contact-card a { color: #00ffe7; font-weight: 600; display: block; margin-top: 10px; }
+    /* matrix canvas */
+    #matrixCanvas{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0; transition:opacity .5s}
+    .reveal {opacity:0.16}
 
-        /* Animations */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    /* footer */
+    footer{padding:28px; text-align:center; color:var(--muted); font-size:0.9rem; border-top:1px solid rgba(255,255,255,0.02); margin-top:40px}
+    .easter{font-family:var(--mono); color:var(--muted); font-size:0.9rem; cursor:pointer}
 
-        /* Responsive */
-        @media(max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; }
-        }
-    </style>
+    /* responsive */
+    @media(max-width:1000px){
+      .hero-card{grid-template-columns:1fr; padding:20px}
+      .hero-left{text-align:center}
+      .hero-actions{justify-content:center}
+      .terminal{order:2}
+    }
+    @media(max-width:560px){
+      nav{padding:10px 12px}
+      .hero{padding-top:100px}
+      .hero-left h1{font-size:2rem}
+      .hero-left h2{font-size:.95rem}
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="logo"><strong>MEGHANA</strong></div>
-        <div class="menu">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+
+  <!-- Matrix Canvas behind everything (starts hidden) -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">MEGHANA ✦</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#follow" class="cta-small">Follow</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div class="hero-card" role="main" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <h1 id="hero-heading">Meghana M</h1>
+        <h2>Full-Stack Developer · AI Enthusiast · Cloud Tinkerer</h2>
+        <p>Innovative dev who builds interactive web apps, trains ML models, and deploys things that actually work (most of the time). Loves clear UI, reproducible pipelines, and coffee-powered debugging sessions.</p>
+
+        <div class="hero-actions" role="group" aria-label="hero actions">
+          <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            <i class="fa fa-rocket"></i> View My Work
+          </button>
+          <a class="btn btn-ghost" href="#contact"><i class="fa fa-envelope"></i> Get in touch</a>
         </div>
-    </nav>
+      </div>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Meghana M</h1>
-            <h2>Full-Stack Developer & AI Enthusiast</h2>
-            <p>Innovative developer passionate about web development, machine learning, and creating intelligent, interactive applications.</p>
-            <a href="#projects" class="btn">View My Work</a>
+      <!-- terminal-style whoami -->
+      <div class="terminal" aria-hidden="false">
+        <div class="term-top">
+          <span class="dot red" title="close"></span>
+          <span class="dot yellow" title="minimize"></span>
+          <span class="dot green" title="maximize"></span>
         </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p class="about-text">
-            I'm an enthusiastic full-stack developer and AI-focused innovator. I enjoy building scalable web applications, exploring machine learning models, and designing seamless user experiences. My goal is to create intelligent solutions that merge technology with creativity.
-        </p>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-container">
-        <!-- Programming Languages -->
-        <div class="skill-domain">
-          <h4>Programming Languages</h4>
-          <div class="skill-badges">
-            <span class="skill-badge">C</span>
-            <span class="skill-badge">C++</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">JavaScript</span>
+        <div class="term-body" id="whoami">
+          <div class="whoami-line"><span class="muted">meghana@portfolio ~$</span><span style="color:#fff; font-weight:700"> whoami</span></div>
+          <div style="margin-top:10px; text-align:left">
+            <div><strong>Meghana M</strong> — Full-Stack Developer & AI Enthusiast</div>
+            <div style="color:var(--muted); margin-top:8px">I write code that talks to models, UIs that feel alive, and deploys that don't cry in prod.</div>
+            <div style="margin-top:12px; display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap">
+              <span class="badge">C / C++</span>
+              <span class="badge">Python</span>
+              <span class="badge">React</span>
+              <span class="badge">PyTorch</span>
+              <span class="badge">Genai</span>
+            </div>
           </div>
+          <div style="margin-top:12px; color:var(--muted); font-size:13px">Tip: Click any skill badge to copy it to clipboard ✨</div>
         </div>
+      </div>
+    </div>
+  </main>
 
-        <!-- Web Technologies -->
-        <div class="skill-domain">
-          <h4>Web Technologies</h4>
-          <div class="skill-badges">
-            <strong>Frontend:</strong>
-            <span class="skill-badge">React</span>
-            <span class="skill-badge">HTML</span>
-            <span class="skill-badge">CSS</span>
-            <span class="skill-badge">JS</span>
-            <span class="skill-badge">Bootstrap</span>
-            <span class="skill-badge">Tailwind</span><br>
-            <strong>Backend:</strong>
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Express</span>
-            <span class="skill-badge">Flask</span>
-          </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <h3 class="section-title">About Me</h3>
+    <p class="subtitle">I build scalable web apps, experiment with ML models, and design experiences that humans (and other developers) enjoy.</p>
+
+    <div style="max-width:900px; margin:22px auto; text-align:center; color:var(--muted)">
+      I'm an enthusiastic full-stack dev and AI-focused innovator. My goal is to create intelligent, privacy-aware solutions that combine elegant UI with robust backends. I love prototyping — from a quick Flask demo to a full deployed pipeline on cloud.
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h3 class="section-title">Skills</h3>
+    <p class="subtitle">Click a card to highlight its badges — double-click a badge to copy it.</p>
+
+    <div class="skills-grid" aria-hidden="false">
+      <div class="skill-card" onclick="highlightCards(this)">
+        <h4>Programming Languages</h4>
+        <div class="skill-badges">
+          <span class="badge" ondblclick="copyToClipboard('C')">C</span>
+          <span class="badge" ondblclick="copyToClipboard('C++')">C++</span>
+          <span class="badge" ondblclick="copyToClipboard('Python')">Python</span>
+          <span class="badge" ondblclick="copyToClipboard('JavaScript')">JavaScript</span>
         </div>
+      </div>
 
-        <!-- Database -->
-        <div class="skill-domain">
-          <h4>Database</h4>
-          <div class="skill-badges">
-            <span class="skill-badge">MySQL</span>
-            <span class="skill-badge">MongoDB</span>
-          </div>
+      <div class="skill-card" onclick="highlightCards(this)">
+        <h4>Web Technologies</h4>
+        <div class="skill-badges">
+          <span class="badge" ondblclick="copyToClipboard('React')">React</span>
+          <span class="badge" ondblclick="copyToClipboard('HTML')">HTML</span>
+          <span class="badge" ondblclick="copyToClipboard('CSS')">CSS</span>
+          <span class="badge" ondblclick="copyToClipboard('Bootstrap')">Bootstrap</span>
+          <span class="badge" ondblclick="copyToClipboard('Tailwind')">Tailwind</span>
         </div>
+      </div>
 
-        <!-- Machine Learning -->
-        <div class="skill-domain">
-          <h4>Machine Learning</h4>
-          <div class="skill-badges">
-            <span class="skill-badge">Scikit-learn</span>
-            <span class="skill-badge">NumPy</span>
-            <span class="skill-badge">Pandas</span>
-            <span class="skill-badge">OpenCV</span>
-          </div>
+      <div class="skill-card" onclick="highlightCards(this)">
+        <h4>Backend & Databases</h4>
+        <div class="skill-badges">
+          <span class="badge" ondblclick="copyToClipboard('Node.js')">Node.js</span>
+          <span class="badge" ondblclick="copyToClipboard('Express')">Express</span>
+          <span class="badge" ondblclick="copyToClipboard('Flask')">Flask</span>
+          <span class="badge" ondblclick="copyToClipboard('MySQL')">MySQL</span>
+          <span class="badge" ondblclick="copyToClipboard('MongoDB')">MongoDB</span>
         </div>
+      </div>
 
-        <!-- Big Data -->
-        <div class="skill-domain">
-          <h4>Big Data</h4>
-          <div class="skill-badges">
-            <span class="skill-badge">Spark</span>
-            <span class="skill-badge">Hive</span>
-            <span class="skill-badge">Hadoop</span>
-          </div>
+      <div class="skill-card" onclick="highlightCards(this)">
+        <h4>Machine Learning</h4>
+        <div class="skill-badges">
+          <span class="badge" ondblclick="copyToClipboard('Scikit-learn')">Scikit-learn</span>
+          <span class="badge" ondblclick="copyToClipboard('NumPy')">NumPy</span>
+          <span class="badge" ondblclick="copyToClipboard('Pandas')">Pandas</span>
+          <span class="badge" ondblclick="copyToClipboard('OpenCV')">OpenCV</span>
+          <span class="badge" ondblclick="copyToClipboard('PyTorch')">PyTorch</span>
         </div>
+      </div>
 
-        <!-- DevOps & Tools -->
-        <div class="skill-domain">
-          <h4>DevOps & Tools</h4>
-          <div class="skill-badges">
-            <span class="skill-badge">Git</span>
-            <span class="skill-badge">Docker</span>
+      <div class="skill-card" onclick="highlightCards(this)">
+        <h4>Big Data & Tools</h4>
+        <div class="skill-badges">
+          <span class="badge" ondblclick="copyToClipboard('Spark')">Spark</span>
+          <span class="badge" ondblclick="copyToClipboard('Hive')">Hive</span>
+          <span class="badge" ondblclick="copyToClipboard('Hadoop')">Hadoop</span>
+          <span class="badge" ondblclick="copyToClipboard('Docker')">Docker</span>
+          <span class="badge" ondblclick="copyToClipboard('Git')">Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
+    <p class="subtitle">A few things I built — demos, code, and small experiments.</p>
+
+    <div class="projects-grid" role="list">
+      <div class="project" role="listitem">
+        <div class="project-card">
+          <div class="project-card-inner">
+            <div>
+              <h4>Fake News Detection Web App</h4>
+              <p>Flask-based ML app predicting real or fake news in real-time.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end;">
+              <a href="https://fake-news-detector-7u5j.onrender.com" target="_blank" rel="noopener">Live Demo</a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Projects -->
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <h4>Fake News Detection Web App</h4>
-                <p>Flask-based ML app predicting real or fake news in real-time.</p>
-                <a href="https://fake-news-detector-7u5j.onrender.com" target="_blank">Live Demo</a>
+      <div class="project" role="listitem">
+        <div class="project-card">
+          <div class="project-card-inner">
+            <div>
+              <h4>Handwritten Digits Recognition</h4>
+              <p>ANN model in PyTorch to classify handwritten digits — demo and dataset experiments.</p>
             </div>
-            <div class="project-card">
-                <h4>Handwritten Digits Recognition</h4>
-                <p>Implemented an ANN model in PyTorch for digit recognition.</p>
-                <a href="https://github.com/pq36/handwritten_digits_recognition" target="_blank">GitHub</a>
+            <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end;">
+              <a href="https://github.com/pq36/handwritten_digits_recognition" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <div class="project-card">
-                <h4>Risk-Based Proctoring System</h4>
-                <p>Behavioral-based AI system for online exam monitoring.</p>
-                <a href="https://github.com/pq36/RISK_BASED_PROCTORING_SYSTEM" target="_blank">GitHub</a>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-container">
-            <div class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <h4>Email</h4>
-                <a href="mailto:meghanaop360@gmail.com">meghanaop360@gmail.com</a>
+      <div class="project" role="listitem">
+        <div class="project-card">
+          <div class="project-card-inner">
+            <div>
+              <h4>Risk-Based Proctoring System</h4>
+              <p>Behavioral AI system using mouse/keystroke analytics for adaptive proctoring.</p>
             </div>
-            <div class="contact-card">
-                <i class="fab fa-linkedin"></i>
-                <h4>LinkedIn</h4>
-                <a href="https://linkedin.com/in/meghana-m-84967a25b" target="_blank">linkedin.com/in/meghana-m-84967a25b</a>
+            <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end;">
+              <a href="https://github.com/pq36/RISK_BASED_PROCTORING_SYSTEM" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <div class="contact-card">
-                <i class="fab fa-github"></i>
-                <h4>GitHub</h4>
-                <a href="https://github.com/pq36" target="_blank">github.com/pq36</a>
-            </div>
+          </div>
         </div>
-    </section>
-    <script>
-    const menuBtn = document.createElement('div');
-    menuBtn.className = 'menu-btn';
-    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    document.querySelector('nav').appendChild(menuBtn);
+      </div>
+    </div>
+  </section>
 
-    const menu = document.querySelector('.menu');
-    menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('show');
+  <!-- FOLLOW / RED-BLUE PILL -->
+  <section id="follow">
+    <div class="pill-block" role="region" aria-labelledby="follow-title">
+      <h3 id="follow-title" class="section-title">Choose Your Reality</h3>
+      <p class="pill-quote">“You take the blue pill — you close this tab and forget you ever saw this site. <br>
+      You take the red pill — you follow me and see how deep the code goes.”</p>
+
+      <div class="pills" role="group" aria-label="red-blue-pill">
+        <button class="pill blue" id="bluePill" aria-label="Blue pill — leave"> <i class="fa fa-circle"></i> Blue Pill</button>
+        <button class="pill red" id="redPill" aria-label="Red pill — follow"> <i class="fa fa-bolt"></i> Red Pill</button>
+      </div>
+
+      <div id="socialPanel" style="margin-top:14px; opacity:0; transform:translateY(6px); transition:all .5s; pointer-events:none;">
+        <p style="color:var(--muted)">Welcome to the rabbit hole — follow me:</p>
+        <div style="display:flex; gap:10px; justify-content:center; margin-top:8px">
+          <a class="badge" href="https://github.com/pq36" target="_blank" rel="noopener">GitHub</a>
+          <a class="badge" href="https://linkedin.com/in/meghana-m-84967a25b" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h3 class="section-title">Contact Me</h3>
+    <p class="subtitle">Let’s build something interesting — or at least share memes.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fa fa-envelope"></i>
+        <h4>Email</h4>
+        <a href="mailto:meghanaop360@gmail.com">meghanaop360@gmail.com</a>
+      </div>
+
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <h4>LinkedIn</h4>
+        <a href="https://linkedin.com/in/meghana-m-84967a25b" target="_blank" rel="noopener">linkedin.com/in/meghana-m-84967a25b</a>
+      </div>
+
+      <div class="contact-card">
+        <i class="fab fa-github"></i>
+        <h4>GitHub</h4>
+        <a href="https://github.com/pq36" target="_blank" rel="noopener">github.com/pq36</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Made with ☕ and <strong>code</strong> — Meghana M</div>
+    <div style="margin-top:8px">
+      <span class="easter" id="easterEgg">> hover me for a secret</span>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    /* copy to clipboard helper */
+    function copyToClipboard(text){
+      navigator.clipboard?.writeText(text).then(()=>{
+        flashToast(text + ' copied ✔');
+      }).catch(()=>{ flashToast('Could not copy')});
+    }
+
+    /* subtle toast */
+    function flashToast(msg){
+      const t = document.createElement('div');
+      t.textContent = msg;
+      t.style.position='fixed';
+      t.style.right='20px';
+      t.style.bottom='24px';
+      t.style.background='rgba(0,0,0,0.7)';
+      t.style.color='white';
+      t.style.padding='10px 14px';
+      t.style.borderRadius='10px';
+      t.style.zIndex=9999;
+      t.style.fontFamily='var(--sans)';
+      document.body.appendChild(t);
+      setTimeout(()=> t.style.opacity='0',1600);
+      setTimeout(()=> t.remove(),2200);
+    }
+
+    /* highlight skill card on click */
+    function highlightCards(el){
+      const cards = document.querySelectorAll('.skill-card');
+      cards.forEach(c=> c.style.transform='translateY(0)');
+      el.style.transform='translateY(-10px) scale(1.01)';
+      // show which badges are in that card (visual hint)
+      const badges = el.querySelectorAll('.badge');
+      badges.forEach(b=>{
+        b.style.background = 'linear-gradient(90deg, rgba(0,255,231,0.06), rgba(255,255,255,0.01))';
+        b.style.color = '#d6fff7';
+      });
+      setTimeout(()=> badges.forEach(b=>{
+        b.style.background='';
+        b.style.color='';
+      }),1200);
+    }
+
+    /* NAV mobile toggle (simple) */
+    // (If you want a hamburger in mobile, you can add it. For now nav adapts.)
+
+    /* RED / BLUE pill logic */
+    const blue = document.getElementById('bluePill');
+    const red = document.getElementById('redPill');
+    const socialPanel = document.getElementById('socialPanel');
+    const matrixCanvas = document.getElementById('matrixCanvas');
+    let matrixStarted = false;
+
+    blue.addEventListener('click', (e)=>{
+      e.preventDefault();
+      // playful exit: fade out then redirect to about:blank
+      document.body.style.transition = 'opacity .6s';
+      document.body.style.opacity = '0.02';
+      setTimeout(()=> window.location.href = 'about:blank', 700);
     });
-</script>
 
+    red.addEventListener('click', (e)=>{
+      e.preventDefault();
+      // reveal socials
+      socialPanel.style.opacity = '1';
+      socialPanel.style.transform = 'translateY(0)';
+      socialPanel.style.pointerEvents = 'auto';
+      // matrix reveal
+      if(!matrixStarted) { startMatrix(); matrixStarted = true; }
+      matrixCanvas.classList.add('reveal');
+      flashToast('Access granted. Welcome to the rabbit hole 🐇');
+    });
+
+    /* MATRIX RAIN - simple implementation */
+    function startMatrix(){
+      const canvas = matrixCanvas;
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = innerWidth;
+      let h = canvas.height = innerHeight;
+      const fontSize = 14;
+      let columns = Math.floor(w / fontSize);
+      let drops = new Array(columns).fill(1);
+
+      ctx.font = fontSize + 'px monospace';
+
+      function step(){
+        ctx.fillStyle = 'rgba(0,0,0,0.06)';
+        ctx.fillRect(0,0,w,h);
+        ctx.fillStyle = 'rgba(0,255,150,0.8)';
+        for(let i=0;i<columns;i++){
+          const text = String.fromCharCode(33 + Math.random() * 94);
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          if(drops[i] * fontSize > h && Math.random() > 0.975) drops[i]=0;
+          drops[i]++;
+        }
+        requestAnimationFrame(step);
+      }
+
+      window.addEventListener('resize', ()=> {
+        w = canvas.width = innerWidth;
+        h = canvas.height = innerHeight;
+        columns = Math.floor(w / fontSize);
+        drops = new Array(columns).fill(1);
+      });
+
+      // lower opacity so it's a subtle background
+      canvas.style.opacity = '0.16';
+      step();
+    }
+
+    /* project card tilt on mouse move (subtle) */
+    document.querySelectorAll('.project-card').forEach(card=>{
+      card.addEventListener('mousemove', (e)=>{
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width/2;
+        const cy = rect.height/2;
+        const dx = (x - cx) / cx;
+        const dy = (y - cy) / cy;
+        card.style.transform = `translateY(-8px) rotateX(${(-dy*6)}deg) rotateY(${dx*6}deg)`;
+      });
+      card.addEventListener('mouseleave', ()=> card.style.transform = '');
+    });
+
+    /* easter egg */
+    const egg = document.getElementById('easterEgg');
+    egg.addEventListener('mouseenter', ()=> flashToast('Secret unlocked — I code in midnight hours 🌙'));
+    egg.addEventListener('click', ()=> {
+      egg.textContent = '> i ♥ open-source';
+      egg.style.color = 'var(--accent)';
+      setTimeout(()=> egg.textContent = '> hover me for a secret', 3000);
+    });
+
+    /* Copy badges tooltip (double-click handled in HTML) */
+    // accessibility: make badges keyboard-copyable
+    document.querySelectorAll('.badge').forEach(b=>{
+      b.setAttribute('tabindex','0');
+      b.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          copyToClipboard(b.textContent.trim());
+        }
+      });
+    });
+
+    // small UX: smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    });
+
+  </script>
 </body>
 </html>
