@@ -49,11 +49,32 @@
       z-index:60;
       border-bottom:1px solid rgba(255,255,255,0.03);
     }
-    .logo {font-weight:700; letter-spacing:1px}
+    .logo {
+      font-weight:700;
+      letter-spacing:1px;
+      font-size:1rem;
+    }
     .nav-links{display:flex; gap:18px; align-items:center}
-    .nav-links a{color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px; transition:all .18s}
-    .nav-links a:hover{color:var(--bg); background:var(--accent); box-shadow:0 6px 18px rgba(0,255,231,0.08)}
-    .cta-small{background:var(--accent-2); color:white; padding:8px 12px; border-radius:10px; font-weight:700}
+    .nav-links a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+      padding:8px 12px;
+      border-radius:10px;
+      transition:all .18s
+    }
+    .nav-links a:hover{
+      color:var(--bg);
+      background:var(--accent);
+      box-shadow:0 6px 18px rgba(0,255,231,0.08)
+    }
+    .cta-small{
+      background:var(--accent-2);
+      color:white;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:700
+    }
 
     /* HERO */
     .hero{
@@ -91,8 +112,18 @@
       color:var(--accent);
       font-weight:700;
     }
-    .hero-left p{color:var(--muted); margin:0 0 18px; max-width:54ch}
-    .hero-actions{display:flex; gap:12px; align-items:center; justify-content:flex-start; flex-wrap:wrap}
+    .hero-left p{
+      color:var(--muted);
+      margin:0 0 18px;
+      max-width:54ch
+    }
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:flex-start;
+      flex-wrap:wrap
+    }
     .btn{
       padding:10px 16px;
       border-radius:999px;
@@ -103,8 +134,16 @@
       align-items:center;
       border:none;
     }
-    .btn-primary{background:var(--accent); color:#071025; box-shadow:0 8px 30px rgba(0,255,231,0.06)}
-    .btn-ghost{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04)}
+    .btn-primary{
+      background:var(--accent);
+      color:#071025;
+      box-shadow:0 8px 30px rgba(0,255,231,0.06)
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04)
+    }
 
     /* right column: whoami terminal */
     .terminal{
@@ -127,29 +166,68 @@
 
     /* sections */
     section {padding:72px 28px}
-    .section-title{font-size:1.9rem; color:#fff; text-align:center; margin-bottom:14px}
-    .subtitle{color:var(--muted); text-align:center; margin-bottom:28px}
+    .section-title{
+      font-size:1.9rem;
+      color:#fff;
+      text-align:center;
+      margin-bottom:14px
+    }
+    .subtitle{
+      color:var(--muted);
+      text-align:center;
+      margin-bottom:28px
+    }
 
     /* skills */
-    .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; max-width:1100px; margin:0 auto}
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:16px;
+      max-width:1100px;
+      margin:0 auto
+    }
     .skill-card{
       background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:16px; border-radius:12px; text-align:center;
+      padding:16px;
+      border-radius:12px;
+      text-align:center;
       border:1px solid rgba(255,255,255,0.02);
       transition:transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s;
       cursor:pointer;
     }
-    .skill-card:hover{transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.5)}
-    .skill-card h4{color:var(--accent); margin:6px 0; font-size:1rem}
-    .skill-badges{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
+    .skill-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.5)
+    }
+    .skill-card h4{
+      color:var(--accent);
+      margin:6px 0;
+      font-size:1rem
+    }
+    .skill-badges{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center
+    }
     .badge{
       background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:8px 10px; border-radius:999px; font-weight:700; font-size:0.86rem; color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:0.86rem;
+      color:var(--muted);
       border:1px solid rgba(255,255,255,0.02)
     }
 
     /* projects */
-    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; max-width:1100px; margin:22px auto 0}
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+      max-width:1100px;
+      margin:22px auto 0
+    }
     .project{
       perspective:1200px;
       height:220px;
@@ -164,41 +242,138 @@
       cursor:pointer;
     }
     .project-card-inner{
-      position:absolute; inset:0; border-radius:inherit; overflow:hidden;
-      display:flex; flex-direction:column; justify-content:space-between; padding:18px;
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      padding:18px;
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border:1px solid rgba(255,255,255,0.02);
     }
-    .project-card:hover{transform: translateY(-10px) rotateX(6deg); box-shadow: 0 24px 60px rgba(2,6,23,0.7)}
-    .project-card h4{color:var(--accent); margin:0 0 6px}
-    .project-card p{color:var(--muted); margin:0 0 12px}
-    .project-card a{display:inline-block; padding:8px 14px; border-radius:999px; background:var(--accent); color:#071025; font-weight:800; text-decoration:none}
+    .project-card:hover{
+      transform: translateY(-10px) rotateX(6deg);
+      box-shadow: 0 24px 60px rgba(2,6,23,0.7)
+    }
+    .project-card h4{
+      color:var(--accent);
+      margin:0 0 6px
+    }
+    .project-card p{
+      color:var(--muted);
+      margin:0 0 12px
+    }
+    .project-card a{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#071025;
+      font-weight:800;
+      text-decoration:none
+    }
 
     /* contact */
-    .contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px; max-width:900px; margin:0 auto}
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:18px;
+      max-width:900px;
+      margin:0 auto
+    }
     .contact-card{
-      padding:18px; border-radius:12px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      padding:18px;
+      border-radius:12px;
+      text-align:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
       border:1px solid rgba(255,255,255,0.02);
     }
-    .contact-card i{font-size:28px;color:var(--accent); margin-bottom:8px; display:block}
-    .contact-card a{color:var(--muted); font-weight:700; display:block; margin-top:6px}
+    .contact-card i{
+      font-size:28px;
+      color:var(--accent);
+      margin-bottom:8px;
+      display:block
+    }
+    .contact-card a{
+      color:var(--muted);
+      font-weight:700;
+      display:block;
+      margin-top:6px
+    }
 
     /* red/blue pill block */
-    .pill-block{max-width:900px; margin:26px auto 0; text-align:center; padding:22px; border-radius:14px; background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.02)}
-    .pill-quote{font-style:italic; color:#dcdcdc; margin-bottom:16px; font-size:1.05rem}
-    .pills{display:flex; gap:14px; justify-content:center; align-items:center; margin-top:8px}
-    .pill{padding:10px 18px; border-radius:999px; font-weight:800; cursor:pointer; display:inline-flex; gap:10px; align-items:center; border:none}
-    .pill.blue{background:#2b6cff; color:white; box-shadow:0 12px 40px rgba(43,108,255,0.08)}
-    .pill.red{background:linear-gradient(90deg,var(--accent-2),#ff765a); color:white; box-shadow:0 18px 50px rgba(255,59,107,0.12)}
+    .pill-block{
+      max-width:900px;
+      margin:26px auto 0;
+      text-align:center;
+      padding:22px;
+      border-radius:14px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border:1px solid rgba(255,255,255,0.02)
+    }
+    .pill-quote{
+      font-style:italic;
+      color:#dcdcdc;
+      margin-bottom:16px;
+      font-size:1.05rem
+    }
+    .pills{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      align-items:center;
+      margin-top:8px
+    }
+    .pill{
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:800;
+      cursor:pointer;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      border:none
+    }
+    .pill.blue{
+      background:#2b6cff;
+      color:white;
+      box-shadow:0 12px 40px rgba(43,108,255,0.08)
+    }
+    .pill.red{
+      background:linear-gradient(90deg,var(--accent-2),#ff765a);
+      color:white;
+      box-shadow:0 18px 50px rgba(255,59,107,0.12)
+    }
     .pill.small{padding:8px 12px; font-weight:700}
 
     /* matrix canvas */
-    #matrixCanvas{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0; transition:opacity .5s}
+    #matrixCanvas{
+      position:fixed;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      opacity:0;
+      transition:opacity .5s
+    }
     .reveal {opacity:0.16}
 
     /* footer */
-    footer{padding:28px; text-align:center; color:var(--muted); font-size:0.9rem; border-top:1px solid rgba(255,255,255,0.02); margin-top:40px}
-    .easter{font-family:var(--mono); color:var(--muted); font-size:0.9rem; cursor:pointer}
+    footer{
+      padding:28px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.9rem;
+      border-top:1px solid rgba(255,255,255,0.02);
+      margin-top:40px
+    }
+    .easter{
+      font-family:var(--mono);
+      color:var(--muted);
+      font-size:0.9rem;
+      cursor:pointer
+    }
 
     /* responsive */
     @media(max-width:1000px){
@@ -221,8 +396,8 @@
   <canvas id="matrixCanvas"></canvas>
 
   <!-- NAV -->
-  <nav>
-    <div class="logo">MEGHANA ✦</div>
+  <nav aria-label="Main navigation">
+    <div class="logo" aria-label="Meghana personal logo">MEGHANA ✦</div>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -238,58 +413,74 @@
       <div class="hero-left">
         <h1 id="hero-heading">Meghana M</h1>
         <h2>Full-Stack Developer · AI Enthusiast · Cloud Tinkerer</h2>
-        <p>Innovative dev who builds interactive web apps, trains ML models, and deploys things that actually work (most of the time). Loves clear UI, reproducible pipelines, and coffee-powered debugging sessions.</p>
+        <p>
+          I build interactive web apps, train ML models, and ship things that actually work.
+          I care about clear UIs, reliable workflows, and debugging sessions that stay calm (most of the time).
+        </p>
 
-        <div class="hero-actions" role="group" aria-label="hero actions">
-          <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-            <i class="fa fa-rocket"></i> View My Work
+        <div class="hero-actions" role="group" aria-label="Primary actions">
+          <button class="btn btn-primary" type="button" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            <i class="fa fa-rocket" aria-hidden="true"></i> <span>View my work</span>
           </button>
-          <a class="btn btn-ghost" href="#contact"><i class="fa fa-envelope"></i> Get in touch</a>
+          <a class="btn btn-ghost" href="#contact">
+            <i class="fa fa-envelope" aria-hidden="true"></i> <span>Get in touch</span>
+          </a>
         </div>
       </div>
 
       <!-- terminal-style whoami -->
-      <div class="terminal" aria-hidden="false">
-        <div class="term-top">
+      <div class="terminal" aria-label="Developer profile terminal">
+        <div class="term-top" aria-hidden="true">
           <span class="dot red" title="close"></span>
           <span class="dot yellow" title="minimize"></span>
           <span class="dot green" title="maximize"></span>
         </div>
         <div class="term-body" id="whoami">
-          <div class="whoami-line"><span class="muted">meghana@portfolio ~$</span><span style="color:#fff; font-weight:700"> whoami</span></div>
+          <div class="whoami-line">
+            <span class="muted">meghana@portfolio ~$</span>
+            <span style="color:#fff; font-weight:700"> whoami</span>
+          </div>
           <div style="margin-top:10px; text-align:left">
             <div><strong>Meghana M</strong> — Full-Stack Developer & AI Enthusiast</div>
-            <div style="color:var(--muted); margin-top:8px">I write code that talks to models, UIs that feel alive, and deploys that don't cry in prod.</div>
+            <div style="color:var(--muted); margin-top:8px">
+              I build apps that talk to models, craft UIs that feel responsive, and deploy services that stay stable in production.
+            </div>
             <div style="margin-top:12px; display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap">
               <span class="badge">C / C++</span>
               <span class="badge">Python</span>
               <span class="badge">React</span>
               <span class="badge">PyTorch</span>
-              <span class="badge">Genai</span>
+              <span class="badge">GenAI</span>
             </div>
           </div>
-          <div style="margin-top:12px; color:var(--muted); font-size:13px">Tip: Click any skill badge to copy it to clipboard ✨</div>
+          <div style="margin-top:12px; color:var(--muted); font-size:13px">
+            Tip: Click a skill card, then double-click any badge to copy it ✨
+          </div>
         </div>
       </div>
     </div>
   </main>
 
   <!-- ABOUT -->
-  <section id="about">
-    <h3 class="section-title">About Me</h3>
-    <p class="subtitle">I build scalable web apps, experiment with ML models, and design experiences that humans (and other developers) enjoy.</p>
+  <section id="about" aria-labelledby="about-heading">
+    <h3 class="section-title" id="about-heading">About Me</h3>
+    <p class="subtitle">
+      I build scalable web apps, experiment with ML models, and design experiences that feel simple and intentional.
+    </p>
 
     <div style="max-width:900px; margin:22px auto; text-align:center; color:var(--muted)">
-      I'm an enthusiastic full-stack dev and AI-focused innovator. My goal is to create intelligent, privacy-aware solutions that combine elegant UI with robust backends. I love prototyping — from a quick Flask demo to a full deployed pipeline on cloud.
+      I’m a full-stack developer with a focus on AI-driven products. I like building privacy-aware tools that combine
+      clear, minimal UIs with dependable backends. I enjoy moving from quick Flask or React prototypes to fully
+      deployed cloud apps — and documenting the journey so others can work with them easily.
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills">
-    <h3 class="section-title">Skills</h3>
+  <section id="skills" aria-labelledby="skills-heading">
+    <h3 class="section-title" id="skills-heading">Skills</h3>
     <p class="subtitle">Click a card to highlight its badges — double-click a badge to copy it.</p>
 
-    <div class="skills-grid" aria-hidden="false">
+    <div class="skills-grid">
       <div class="skill-card" onclick="highlightCards(this)">
         <h4>Programming Languages</h4>
         <div class="skill-badges">
@@ -347,9 +538,9 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <h3 class="section-title">Projects</h3>
-    <p class="subtitle">A few things I built — demos, code, and small experiments.</p>
+  <section id="projects" aria-labelledby="projects-heading">
+    <h3 class="section-title" id="projects-heading">Projects</h3>
+    <p class="subtitle">Selected work — shipped apps, experiments, and learning projects.</p>
 
     <div class="projects-grid" role="list">
       <div class="project" role="listitem">
@@ -357,7 +548,7 @@
           <div class="project-card-inner">
             <div>
               <h4>Fake News Detection Web App</h4>
-              <p>Flask-based ML app predicting real or fake news in real-time.</p>
+              <p>Flask-based ML app that classifies news as real or fake in real time, with a simple web UI.</p>
             </div>
             <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end;">
               <a href="https://fake-news-detector-7u5j.onrender.com" target="_blank" rel="noopener">Live Demo</a>
@@ -371,7 +562,7 @@
           <div class="project-card-inner">
             <div>
               <h4>Handwritten Digits Recognition</h4>
-              <p>ANN model in PyTorch to classify handwritten digits — demo and dataset experiments.</p>
+              <p>PyTorch-based ANN that classifies handwritten digits, with experiments on model accuracy and training setups.</p>
             </div>
             <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end;">
               <a href="https://github.com/pq36/handwritten_digits_recognition" target="_blank" rel="noopener">GitHub</a>
@@ -385,7 +576,7 @@
           <div class="project-card-inner">
             <div>
               <h4>Risk-Based Proctoring System</h4>
-              <p>Behavioral AI system using mouse/keystroke analytics for adaptive proctoring.</p>
+              <p>Behavioral analytics system using mouse and keystroke patterns to compute dynamic risk scores for online exams.</p>
             </div>
             <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end;">
               <a href="https://github.com/pq36/RISK_BASED_PROCTORING_SYSTEM" target="_blank" rel="noopener">GitHub</a>
@@ -397,19 +588,25 @@
   </section>
 
   <!-- FOLLOW / RED-BLUE PILL -->
-  <section id="follow">
-    <div class="pill-block" role="region" aria-labelledby="follow-title">
+  <section id="follow" aria-labelledby="follow-title">
+    <div class="pill-block" role="region">
       <h3 id="follow-title" class="section-title">Choose Your Reality</h3>
-      <p class="pill-quote">“You take the blue pill — you close this tab and forget you ever saw this site. <br>
-      You take the red pill — you follow me and see how deep the code goes.”</p>
+      <p class="pill-quote">
+        “You take the blue pill — you close this tab and forget you ever saw this site. <br>
+        You take the red pill — you follow me and see how deep the code goes.”
+      </p>
 
-      <div class="pills" role="group" aria-label="red-blue-pill">
-        <button class="pill blue" id="bluePill" aria-label="Blue pill — leave"> <i class="fa fa-circle"></i> Blue Pill</button>
-        <button class="pill red" id="redPill" aria-label="Red pill — follow"> <i class="fa fa-bolt"></i> Red Pill</button>
+      <div class="pills" role="group" aria-label="Follow options">
+        <button class="pill blue" id="bluePill" aria-label="Blue pill — leave">
+          <i class="fa fa-circle" aria-hidden="true"></i> Blue Pill
+        </button>
+        <button class="pill red" id="redPill" aria-label="Red pill — show social links">
+          <i class="fa fa-bolt" aria-hidden="true"></i> Red Pill
+        </button>
       </div>
 
       <div id="socialPanel" style="margin-top:14px; opacity:0; transform:translateY(6px); transition:all .5s; pointer-events:none;">
-        <p style="color:var(--muted)">Welcome to the rabbit hole — follow me:</p>
+        <p style="color:var(--muted)">Welcome to the rabbit hole — follow my work here:</p>
         <div style="display:flex; gap:10px; justify-content:center; margin-top:8px">
           <a class="badge" href="https://github.com/pq36" target="_blank" rel="noopener">GitHub</a>
           <a class="badge" href="https://linkedin.com/in/meghana-m-84967a25b" target="_blank" rel="noopener">LinkedIn</a>
@@ -419,25 +616,27 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <h3 class="section-title">Contact Me</h3>
-    <p class="subtitle">Let’s build something interesting — or at least share memes.</p>
+  <section id="contact" aria-labelledby="contact-heading">
+    <h3 class="section-title" id="contact-heading">Contact Me</h3>
+    <p class="subtitle">Open to software developer roles, projects, collaborations, and good tech memes.</p>
 
     <div class="contact-grid">
       <div class="contact-card">
-        <i class="fa fa-envelope"></i>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
         <h4>Email</h4>
         <a href="mailto:meghanaop360@gmail.com">meghanaop360@gmail.com</a>
       </div>
 
       <div class="contact-card">
-        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
         <h4>LinkedIn</h4>
-        <a href="https://linkedin.com/in/meghana-m-84967a25b" target="_blank" rel="noopener">linkedin.com/in/meghana-m-84967a25b</a>
+        <a href="https://linkedin.com/in/meghana-m-84967a25b" target="_blank" rel="noopener">
+          linkedin.com/in/meghana-m-84967a25b
+        </a>
       </div>
 
       <div class="contact-card">
-        <i class="fab fa-github"></i>
+        <i class="fab fa-github" aria-hidden="true"></i>
         <h4>GitHub</h4>
         <a href="https://github.com/pq36" target="_blank" rel="noopener">github.com/pq36</a>
       </div>
@@ -447,7 +646,7 @@
   <footer>
     <div>Made with ☕ and <strong>code</strong> — Meghana M</div>
     <div style="margin-top:8px">
-      <span class="easter" id="easterEgg">> hover me for a secret</span>
+      <span class="easter" id="easterEgg">&gt; hover me for a secret</span>
     </div>
   </footer>
 
@@ -455,9 +654,13 @@
   <script>
     /* copy to clipboard helper */
     function copyToClipboard(text){
-      navigator.clipboard?.writeText(text).then(()=>{
+      if (!navigator.clipboard) {
+        flashToast('Clipboard not available');
+        return;
+      }
+      navigator.clipboard.writeText(text).then(()=>{
         flashToast(text + ' copied ✔');
-      }).catch(()=>{ flashToast('Could not copy')});
+      }).catch(()=>{ flashToast('Could not copy'); });
     }
 
     /* subtle toast */
@@ -473,6 +676,7 @@
       t.style.borderRadius='10px';
       t.style.zIndex=9999;
       t.style.fontFamily='var(--sans)';
+      t.style.transition='opacity .6s';
       document.body.appendChild(t);
       setTimeout(()=> t.style.opacity='0',1600);
       setTimeout(()=> t.remove(),2200);
@@ -483,7 +687,7 @@
       const cards = document.querySelectorAll('.skill-card');
       cards.forEach(c=> c.style.transform='translateY(0)');
       el.style.transform='translateY(-10px) scale(1.01)';
-      // show which badges are in that card (visual hint)
+
       const badges = el.querySelectorAll('.badge');
       badges.forEach(b=>{
         b.style.background = 'linear-gradient(90deg, rgba(0,255,231,0.06), rgba(255,255,255,0.01))';
@@ -495,9 +699,6 @@
       }),1200);
     }
 
-    /* NAV mobile toggle (simple) */
-    // (If you want a hamburger in mobile, you can add it. For now nav adapts.)
-
     /* RED / BLUE pill logic */
     const blue = document.getElementById('bluePill');
     const red = document.getElementById('redPill');
@@ -505,25 +706,26 @@
     const matrixCanvas = document.getElementById('matrixCanvas');
     let matrixStarted = false;
 
-    blue.addEventListener('click', (e)=>{
-      e.preventDefault();
-      // playful exit: fade out then redirect to about:blank
-      document.body.style.transition = 'opacity .6s';
-      document.body.style.opacity = '0.02';
-      setTimeout(()=> window.location.href = 'about:blank', 700);
-    });
+    if (blue) {
+      blue.addEventListener('click', (e)=>{
+        e.preventDefault();
+        document.body.style.transition = 'opacity .6s';
+        document.body.style.opacity = '0.02';
+        setTimeout(()=> window.location.href = 'about:blank', 700);
+      });
+    }
 
-    red.addEventListener('click', (e)=>{
-      e.preventDefault();
-      // reveal socials
-      socialPanel.style.opacity = '1';
-      socialPanel.style.transform = 'translateY(0)';
-      socialPanel.style.pointerEvents = 'auto';
-      // matrix reveal
-      if(!matrixStarted) { startMatrix(); matrixStarted = true; }
-      matrixCanvas.classList.add('reveal');
-      flashToast('Access granted. Welcome to the rabbit hole 🐇');
-    });
+    if (red) {
+      red.addEventListener('click', (e)=>{
+        e.preventDefault();
+        socialPanel.style.opacity = '1';
+        socialPanel.style.transform = 'translateY(0)';
+        socialPanel.style.pointerEvents = 'auto';
+        if(!matrixStarted) { startMatrix(); matrixStarted = true; }
+        matrixCanvas.classList.add('reveal');
+        flashToast('Access granted. Welcome to the rabbit hole 🐇');
+      });
+    }
 
     /* MATRIX RAIN - simple implementation */
     function startMatrix(){
@@ -557,7 +759,6 @@
         drops = new Array(columns).fill(1);
       });
 
-      // lower opacity so it's a subtle background
       canvas.style.opacity = '0.16';
       step();
     }
@@ -579,33 +780,40 @@
 
     /* easter egg */
     const egg = document.getElementById('easterEgg');
-    egg.addEventListener('mouseenter', ()=> flashToast('Secret unlocked — I code in midnight hours 🌙'));
-    egg.addEventListener('click', ()=> {
-      egg.textContent = '> i ♥ open-source';
-      egg.style.color = 'var(--accent)';
-      setTimeout(()=> egg.textContent = '> hover me for a secret', 3000);
-    });
+    if (egg) {
+      egg.addEventListener('mouseenter', ()=> flashToast('Secret unlocked — I like late-night coding 🌙'));
+      egg.addEventListener('click', ()=> {
+        egg.textContent = '> i ♥ open-source';
+        egg.style.color = 'var(--accent)';
+        setTimeout(()=> {
+          egg.textContent = '> hover me for a secret';
+          egg.style.color = 'var(--muted)';
+        }, 3000);
+      });
+    }
 
-    /* Copy badges tooltip (double-click handled in HTML) */
-    // accessibility: make badges keyboard-copyable
+    /* Make badges keyboard-copyable */
     document.querySelectorAll('.badge').forEach(b=>{
       b.setAttribute('tabindex','0');
       b.addEventListener('keydown', (e) => {
         if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
           copyToClipboard(b.textContent.trim());
         }
       });
     });
 
-    // small UX: smooth scroll for anchor links
+    /* Smooth scroll for internal links */
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', (e)=>{
         const id = a.getAttribute('href').slice(1);
         const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      })
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
     });
-
   </script>
 </body>
 </html>
